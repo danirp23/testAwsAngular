@@ -6,14 +6,21 @@ import { Injectable } from '@angular/core';
 })
 export class AutorService {
 
-  constructor(private http: HttpClient) { 
-    console.log("Usuario Service ok");
+  constructor(private http: HttpClient) {
     
   }
 
-  cargarData(){
+  cargarData(data){
+    console.log(data);
+    
     const url = "https://8a9wh9xgi1.execute-api.us-east-1.amazonaws.com/dev/v1/autor"
-
     return this.http.get(url);
+  }
+
+  guardarData(data){
+    console.log(data);
+    
+    const url = "https://8a9wh9xgi1.execute-api.us-east-1.amazonaws.com/dev/v1/autor"
+    return this.http.post(url, data);
   }
 }
